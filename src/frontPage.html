@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Audio Service</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body {
+            padding-top: 80px;
+            padding-bottom: 50px;
+            color: #5a5a5a;
+        }
+
+        /* 简介 */
+
+        .summary 
+            padding-right: 25px;
+            padding-left: 25px;
+			margin-right: 10px;
+			margin-left: 10px;
+        }
+
+        .summary .col-md-1 {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .summary .col-md-1 .btn {
+            padding-right: 5px;
+            padding-left: 5px;
+			padding-bottom: 5px;
+            padding-top: 5px;
+            margin-bottom: 10px;
+			margin-top: 10px;
+            align: middle;
+        }		
+		.summary .alert {
+			padding-right: 5px;
+            padding-left: 5px;
+			padding-bottom: 5px;
+            padding-top: 5px;
+            margin-bottom: 5px;
+			margin-top: 5px;
+			margin-left: 5px;
+			margin-right: 5px;
+            text-align: left;
+        }
+		footer {
+            padding-top: 10px;
+            padding-bottom: 10px;
+			margin-left: 10px;
+			margin-right: 10px;
+            color: #5a5a5a;
+        }
+		
+		
+    </style>
+
+</head>
+
+<body>
+<!-- navbar -->
+
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="menu-nav">
+		<div class="container-fluid">
+		  <div class="navbar-header">
+			<a class="navbar-brand" href="#">
+			 <img alt="Brand" src="images/SAP_logo.png">
+			</a>
+		  </div>
+		  <div class="navbar-collapse collapse">
+			  <ul class="nav navbar-nav">
+				  <img src="images/microphone_icon.png" class="img-rounded" align="middle">
+			  </ul>
+		  </div>
+		</div>  
+	</div>
+
+<!-- summary -->
+	<div class="container summary">
+	
+		<div class="row" id="summary-container">
+
+			<div class="alert alert-info alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  <strong>HeadsUP!</strong> Before you speak, please choose the type of language.
+			</div>			
+
+			<div class="col-md-1"> 
+				<!-- language selection -->      
+				<span style="font-size:18px;"><select id="projectPorperty" name="projectPorperty">  
+					<option value="1">Chinese-CN</option>  
+					<option value="0">English-US</option>  
+					<option value="2">English-GB</option>
+					<option value="3">Germany-DE</option>
+					<option value="4">French-FR</option>
+					<option value="5">Italian-IT</option>
+					<option value="6">Spanish-ES</option>				    
+				</select>
+				
+				 <button class="btn btn-primary">
+				 <span class="glyphicon glyphicon-hand-left"></span> PRESS THEN SPEAK
+				 </button>
+				<br><textarea name="speechtotext" cols="36" rows="12" align="left"><%= %></textarea>
+				
+				<script>
+				document.getElementsByTagName('textarea')[0].onkeypress = function () {
+				   var value = this.value,
+					   allLine = value.split('\n'),
+					   lastLine = allLine.pop();
+				 if (lastLine.length >= 15) {
+					 lastLine = lastLine.substr(0, 15) + '\n' + lastLine.substr(15);
+					 allLine.push(lastLine)
+					 this.value = allLine.join('\n');
+				 }
+				};
+				</script> 
+				 <button class="btn btn-primary">
+				 <span class="glyphicon glyphicon-remove-circle"></span> REDO
+				 </button>
+				 
+				 <button class="btn btn-primary">
+				 <span class="glyphicon glyphicon-time"></span> HISTORY
+				 </button>
+				 
+				 <button class="btn btn-primary">
+				 <span class="glyphicon glyphicon-ok-circle"></span> DONE
+				 </button>				
+			</div>
+			<div class="alert alert-info alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  You can <strong>edit</strong> in the text area. 
+			  Or press <strong>'REDO'</strong> to <strong>erease</strong> all. 
+			  Or press <strong>'DONE'</strong> to <strong>save</strong>.
+			</div>			
+		</div>
+	</div>
+    <footer>
+        <!-- <p class="pull-right"><a href="#top">top</a></p> -->
+        <p class="pull-left"><a href="#top">&copy; SAP</p>
+    </footer>
+
+</body>
+
+</html>
