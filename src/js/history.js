@@ -1,10 +1,13 @@
 
-function objRecord(date, content){
+function objRecord(date, content,audio){
 	this.Date = date;
 	this.Content = content;
+	this.Audio = audio;
 }
-var rcd1 = new objRecord("170420_fin01", "Efficiently manage cash flow, payments, liquidity, and risk with treasury and cash management software from SAP.");
-var rcd2 = new objRecord("170420_fin02", "Source cash and liquidity data from multiple systems to improve business forecasting and the financial health of your business.");
+
+var rcd1 = new objRecord("170420_fin01", "Efficiently manage cash flow, payments, liquidity, and risk with treasury and cash management software from SAP.","tengwanggexu.mp3");
+var rcd2 = new objRecord("170420_fin02", "Source cash and liquidity data from multiple systems to improve business forecasting and the financial health of your business.", "ailianshuo.mp3");
+
 var rcd = new Array();
 rcd[0] = rcd1;
 rcd[1] = rcd2;
@@ -25,7 +28,18 @@ function changeRecord(orcd){
 	
 	//change content
 	var tmp2 = "<p>"+orcd.Content+"</p>";
-	document.getElementById("text-content").innerHTML = tmp2;	
+	document.getElementById("text-content").innerHTML = tmp2;
+
+	playAudio(orcd.Audio);	
+}
+
+function playAudio(currentSrc){	
+		var oAudio = document.getElementById("audiosrc");
+
+		if(oAudio.play && oAudio.src != currentSrc){
+			oAudio.src = currentSrc;
+		}
+		oAudio.load();
 }
 
 var site = new Bamboo ();
