@@ -84,6 +84,54 @@
             return null;
         }
 
+        
+        function showSmaple(){
+        	var mode = getMode();
+            var luisCfg = getLuisConfig();
+
+            <!-- clearText(); -->
+
+                if (luisCfg) {
+                    client = Microsoft.CognitiveServices.SpeechRecognition.SpeechRecognitionServiceFactory.createDataClientWithIntent(
+                        getLanguage(),
+                        getKey(),
+                        luisCfg.appid,
+                        luisCfg.subid);
+                } else {
+                    client = Microsoft.CognitiveServices.SpeechRecognition.SpeechRecognitionServiceFactory.createDataClient(
+                        mode,
+                        getLanguage(),
+                        getKey());
+                }
+                request = new XMLHttpRequest();
+                request.open(
+                    'GET',
+                    (mode == Microsoft.CognitiveServices.SpeechRecognition.SpeechRecognitionMode.shortPhrase) ? "whatstheweatherlike.wav" : "batman.wav",
+                    true);
+                request.responseType = 'arraybuffer';
+                request.onload = function () {
+                    if (request.status !== 200) {
+                        setText("unable to receive audio file");
+                    } else {
+                        client.sendAudio(request.response, request.response.length);
+                    }
+                };
+
+                request.send();
+
+            client.onPartialResponseReceived = function (response) {
+                setText(response);
+            }
+
+            client.onFinalResponseReceived = function (response) {
+                setText(JSON.stringify(response));
+            }
+
+            client.onIntentReceived = function (response) {
+                setText(response);
+            };
+        }
+        
         function start() {
             var mode = getMode();
             var luisCfg = getLuisConfig();
@@ -149,6 +197,7 @@
                 setText(response);
             };
         }
+        
     </script>
 	
     <style>
@@ -252,7 +301,7 @@
 				 <button class="btn btn-primary" onclick="start()">
 				 <span class="glyphicon glyphicon-hand-left"></span> PRESS THEN SPEAK
 				 </button>
-				<br><textarea id="output" name="output" cols="36" rows="12" align="left"><%= %></textarea>
+				<br><textarea id="output" name="output" cols="36" rows="12" align="left"></textarea>
 				
 				<script>
 				document.getElementsByTagName('textarea')[0].onkeypress = function () {
@@ -266,26 +315,30 @@
 				 }
 				};
 				</script> 
-				 <button class="btn btn-primary" onclick="clearText()">
+	
+				<button class="btn btn-primary" onclick="clearText()">
 				 <span class="glyphicon glyphicon-remove-circle"></span> REDO
 				 </button>
 				 
 				 <button class="btn btn-primary" onclick="javascript:location.href='HistoryPage.html'">
-				 <span class="glyphicon glyphicon-time"></span> HISTORY
+				 <span class="glyphicon glyphicon-time"></span> INCIDENT LIST
 				 </button>
 				 
 				 <button class="btn btn-primary">
 				 <span class="glyphicon glyphicon-ok-circle"></span> DONE
-				 </button>				
+				 </button>		
+				 
+				
 			</div>
+		
+		</div>
+			
 			<div class="alert alert-info alert-dismissible" role="alert">
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			  You can <strong>edit</strong> in the text area. 
 			  Or press <strong>'REDO'</strong> to <strong>erease</strong> all. 
 			  Or press <strong>'DONE'</strong> to <strong>save</strong>.
-			</div>			
-		</div>
-
+			</div>	
 		<footer>
 			<!-- <p class="pull-right"><a href="#top">top</a></p> -->
 			<p class="pull-left"><a href="#top">&copy; SAP</p>

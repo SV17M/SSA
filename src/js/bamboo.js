@@ -131,17 +131,20 @@ var Bamboo = (function (window, document) {
 		_bindEvents: function(){
 			var _this = this,
                 $body = $('body');
-		$("#main-nav").on( 'touchstart', function(e){
-			_this._start(e);
+
+				//$nav = $('#main-nav');
+
+				$("#main-nav").on( 'touchstart', function(e){
+					_this._start(e);
 				
-			// end
-			$body.on('touchend.bmboo', function(e) {
-				_this._end(e);
+					// end
+					$body.on('touchend.bmboo', function(e) {
+						_this._end(e);
                     // clear the move and end events
-				$body.off('.bmboo');
-			});
+						$body.off('.bmboo');
+                });
 				
-		});
+			});
             // .bmboo defines the namespace for the event
 
             // Start event biding
