@@ -152,9 +152,24 @@ function TransRecord(trcd){
 	var tmp1 = "<hgroup><h1>ID: "+trcd.Date+"</h1></hgroup>";
 	document.getElementById("date").innerHTML = tmp1;
 	
-	start(trcd);
-	
-	playAudio(trcd.Audio);
+	document.getElementById("text-content").innerHTML = "content";
+
+	var obj = document.getElementById("audiosrc");
+	obj.onplay = function(){
+		start(trcd);
+	};
+	playAudioTrans(trcd);	
+}
+
+function playAudioTrans(trcd){
+	var currentSrc = trcd.Audio;
+	var oAudio = document.getElementById("audiosrc");
+
+	if(oAudio.play && oAudio.src != currentSrc){
+		oAudio.src = currentSrc;
+		}
+		oAudio.load();
+		//start(trcd);
 }
 
 var site = new Bamboo ();
