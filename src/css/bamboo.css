@@ -20,7 +20,7 @@
 	=========================== */
 	.navigation { background: rgba(66,139,202,1); color: #cbc4c5; z-index: 1; width: 100%; position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
 	.navigation ul { list-style: none; padding: 0; margin: 0; width: 265px; position: relative; }
-	.navigation li { font-family: Times; font-size: 28px; position: relative; font-weight: 100; border-bottom: solid 1px rgba(0,0,0,0.1); border-top: solid 1px rgba(255,255,255,0.05); padding:10px 10px;}
+	.navigation li { font-family: Times; font-size: 20px; position: relative; font-weight: 100; border-bottom: solid 1px rgba(0,0,0,0.1); border-top: solid 1px rgba(255,255,255,0.05); padding:10px 10px;}
 	.navigation li:first-child{margin-top:10px;}
 		.navigation ul li a,
 		.navigation ul li a:hover ,
