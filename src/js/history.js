@@ -5,11 +5,10 @@ function objRecord(date, content,audio){
 	this.Audio = audio;
 }
 
-
 var rcd1 = new objRecord(
 			"170420_FIN01_GB", 
 			
-			"Reimagine treasury management for the digital age with SAP S/4 HANA Finance. you will be able to gain better control over treasury management and maximize visibility into cash flow, liquidity, and risk.",
+			"Reimagine treasury management for the digital age with SAP S/4 HANA Finance. You will be able to gain better control over treasury management and maximize visibility into cash flow, liquidity, and risk.",
 			
 			"audios/english-GB_FIN_audio.mp3"
 );
@@ -20,6 +19,7 @@ var rcd2 = new objRecord(
 			"利用 SAP SuccessFactors 可以帮助你自动化并加快员工工时与考勤管理流程：缺勤管理解决方案，使员工能够管理自己的工时相关信息，同时管理人员也能访问这些信息。使用考勤表工具，你能够更全面的了解员工状况，增强工时管理合规性，并提升员工满意度。通过劳动力管理解决方案，你能够满足企业复杂的人力资源需求。",
 			
 			"audios/chinese-CN_SF_audio.mp3"
+);
 			
 var rcd3 = new objRecord(
 			"170420_Ariba01_DE", 
@@ -38,14 +38,6 @@ var rcd4 = new objRecord(
 );
 			
 var rcd5 = new objRecord(
-			"170420_SCM01_FR",
-			
-			"Avec les solutions SAP de gestion de la chaîne logistique (SCM), vous répondez aux attentes de plus en plus élevées des clients, vous exécutez des réseaux de distribution de plus en plus complexes et vous atteignez une vitesse de réactivité sans.",
-			
-			"audios/french-FR_SCM_audio.mp3"
-);
-
-var rcd6 = new objRecord(
 			"170420_SAP01_ES",
 			
 			"Como líder de mercado en software de aplicaciones para empresas, SAP ayuda a las organizaciones a combatir los efectos de la complejidad, generar nuevas oportunidades para la innovación y el crecimiento, y mantenerse a la delantera de la competencia.",
@@ -53,13 +45,22 @@ var rcd6 = new objRecord(
 			"audios/Spain-ES_SAP_audio.mp3"
 );
 
-var rcd7 = new objRecord(
+var rcd6 = new objRecord(
 			"170420_SAP02_IT",
 			
 			"Visita il nostro sito aziendale e scopri news, informazioni per investitori e analisti, risorse per la carriera, la storia di SAP Italia e altro.",
 			
 			"audios/Italian-IT_SAP_audio.mp3"
 );
+
+var rcd7 = new objRecord(
+			"170420_SCM01_FR",
+			
+			"Avec les solutions SAP de gestion de la chaîne logistique (SCM), vous répondez aux attentes de plus en plus élevées des clients, vous exécutez des réseaux de distribution de plus en plus complexes et vous atteignez une vitesse de réactivité sans.",
+			
+			"audios/french-FR_SCM_audio.mp3"
+);
+
 
 var rcd = new Array();
 rcd[0] = rcd1;
@@ -69,7 +70,6 @@ rcd[3] = rcd4;
 rcd[4] = rcd5;
 rcd[5] = rcd6;
 rcd[6] = rcd7;
-
 
 //translation cases
 
@@ -93,33 +93,33 @@ var otransrcd2 = new testTranslate(
 );
 
 var otransrcd3 = new testTranslate(
-				"170420_CRM02_EN",
-				"audios/english-US_CRM_audio-demo.mp3",
-				"en-us"
-);
-
-var otransrcd4 = new testTranslate(
-				"170420_SCM02_FR",
-				"audios/french-FR_SCM_audio-demo.mp3",
-				"fr-FR"
-);
-
-var otransrcd5 = new testTranslate(
 				"170420_Ariba02_DE",
 				"audios/German-DE_Ariba_audio-demo.mp3",
 				"de-DE"
 );
 
-var otransrcd6 = new testTranslate(
+var otransrcd4 = new testTranslate(
+				"170420_CRM02_EN",
+				"audios/english-US_CRM_audio-demo.mp3",
+				"en-us"
+);
+
+var otransrcd5 = new testTranslate(
 				"170420_SAP03_IT",
 				"audios/Italian-IT_SAP_audio-demo.mp3",
 				"it-IT"
 );
 
-var otransrcd7 = new testTranslate(
+var otransrcd6 = new testTranslate(
 				"170420_SAP04_ES",
 				"audios/Spain-ES_SAP_audio-demo.mp3",
 				"es-ES"
+);
+
+var otransrcd7 = new testTranslate(
+				"170420_SCM02_FR",
+				"audios/french-FR_SCM_audio-demo.mp3",
+				"fr-FR"
 );
 
 var transrcd = new Array();
