@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>History</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bamboo.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+
+    <div>
+        <nav id="main-nav" class="navigation overflow nav-pills">
+            <ul>
+            </ul>
+        </nav>
+        <!-- /.navbar-header -->
+
+        <!-- side bar -->
+
+        <div id="container">
+
+            <header class="primary">
+                <span class="open icon">&#9776;</span>
+                <div id="date">
+                    <hgroup>
+                        <h1>ID: yyyy/mm/dd</h1>
+                    </hgroup>
+                </div>
+                <div align="right">
+                    <input type="button" class="btn btn-primary btn-lg" onclick="javascript:location.href='index.html'" value="BACK"></input>
+                </div>
+            </header>
+
+            <section id="scroller" class="overflow">
+                <div id="content">
+                    <!-- Content goes in here -->
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <h1>
+                                TEXT
+                            </h1>
+                            <div id="text-content">
+                                <p>Content</p>
+                            </div>
+
+                            <input id="luis_appid" type="hidden" size="0">
+                            <input id="luis_subid" type="hidden" size="0">
+
+                            <audio id="audiosrc" controls="controls">
+					</audio>
+                        </div>
+
+                    </div>
+                    <!-- Content ends -->
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="js/bamboo.js"></script>
+<script src="js/BingSpeech.js" type="text/javascript"></script>
+<script src="js/TransCase.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/history.js"></script>
+
+
+</html>
