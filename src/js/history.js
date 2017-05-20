@@ -24,7 +24,7 @@ var rcd2 = new objRecord(
 var rcd3 = new objRecord(
 			"170420_Ariba01_DE", 
 			
-			"Die Lösungen von Ariba, einem S A P Unternehmen, vereinfachen die Zusammenarbeit bei Aufträgen und Bestellungen, indem Kaufaufträge und auftragsbezogene Dokumente über das Ariba Network übermittelt werden.", 
+			"Die Lösungen von Ariba, einem SAP Unternehmen, vereinfachen die Zusammenarbeit bei Aufträgen und Bestellungen, indem Kaufaufträge und auftragsbezogene Dokumente über das Ariba Network übermittelt werden.", 
 			
 			"audios/German-DE_Ariba_audio.mp3"
 );
