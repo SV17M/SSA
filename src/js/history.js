@@ -81,43 +81,43 @@ function testTranslate(date, audio, lang){
 }
 
 var otransrcd1 = new testTranslate(
-				"170420_FIN02_GB",
+				"170522_FIN02_GB",
 				"audios/english-GB_FIN_audio-demo.mp3",
 				"en-GB"
 );
 
 var otransrcd2 = new testTranslate(
-				"170420_SFSF02_CN",
+				"170522_SFSF02_CN",
 				"audios/chinese-CN_SF_audio-demo.mp3",
 				"zh-cn"
 );
 
 var otransrcd3 = new testTranslate(
-				"170420_Ariba02_DE",
+				"170522_Ariba02_DE",
 				"audios/German-DE_Ariba_audio-demo.mp3",
 				"de-DE"
 );
 
 var otransrcd4 = new testTranslate(
-				"170420_CRM02_EN",
+				"170522_CRM02_EN",
 				"audios/english-US_CRM_audio-demo.mp3",
 				"en-us"
 );
 
 var otransrcd5 = new testTranslate(
-				"170420_SAP03_IT",
+				"170522_SAP03_IT",
 				"audios/Italian-IT_SAP_audio-demo.mp3",
 				"it-IT"
 );
 
 var otransrcd6 = new testTranslate(
-				"170420_SAP04_ES",
+				"170522_SAP04_ES",
 				"audios/Spain-ES_SAP_audio-demo.mp3",
 				"es-ES"
 );
 
 var otransrcd7 = new testTranslate(
-				"170420_SCM02_FR",
+				"170522_SCM02_FR",
 				"audios/french-FR_SCM_audio-demo.mp3",
 				"fr-FR"
 );
